@@ -1,62 +1,104 @@
-.container {
-  font-family: Arial, sans-serif;
+ .container {
+  font-family: 'PT sans';
 }
 
-.header h1 , h2 {
+.header {
+  background-image: url(images/background.png);
+}
+
+.header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 200px;
+  transition: width 2s;
+}
+
+.navbar {
+  background-color: #333333;
+  overflow: hidden;
+  font-weight: normal;
   text-align: center;
 }
 
-.navigation ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  font-weight: bold;
-  font-size: 11pt;
-  border-radius: 69000px;
-}
-
-.navigation li :not(.about){
-  float: left;
-}
-
-.navigation li a {
-  display: block;
+.navbar a {
+  display: inline-block;
   color: white;
   text-align: center;
-  padding: 10px 26px;
+  padding: 12px 16px;
   text-decoration: none;
+  font-size: 13px;
+  vertical-align: middle;
 }
 
-.navigation li a:hover:not(.active) {
-  background-color: #111;
+.navbar a:hover {
+  background-color: #ddd;
+  transition: .7s;
+  color: black;
 }
 
-.navigation li .about {
-  float: right;
+.navbar a.active {
+  background-color: #ffcc00;
+  color: black;
 }
 
-.navigation li .active {
-  background-color: dodgerblue;
+.bodycontainer {
+    float: left;
+    padding: 25px;
 }
 
-.body {
-  padding-top: 0px;
-  padding-bottom: 5px;
-  font-size: 11pt;
-  width: 90%;
-  margin: 0 auto;
+.bodycontainer .body {
+  width: 56%;
+  float: left;
+  text-align: left;
+  line-height: 1.6em;
+}
+
+.bodycontainer .side img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bodycontainer .side {
+  width: 22%;
+  float: left;
+  text-align: center;
+}
+
+@media screen and (max-width: 1125px) {
+  .bodycontainer .body {
+    width: 100%;
+  }
+  .bodycontainer .side {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    background-image: none;
+  }
+
+  .navbar a {
+    margin: 0;
+    display: block;
+    float: none;
+  }
+
+  .navbar {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .bodycontainer .body, .bodycontainer .side {
+    width: 100%;
+  }
+
 }
 
 .footer {
   text-align: center;
   font-size: 9pt;
-  font-style: oblique;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  bottom: 0;
+  padding-top: 20px;
+  width: 100%;
 }
